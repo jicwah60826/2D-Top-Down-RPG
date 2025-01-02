@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Scripting;
 
 
@@ -12,11 +14,15 @@ public class PlayerController : MonoBehaviour
     private PlayerControls playerControls;
     private Vector2 movement; // stores values coming in from user
     private Rigidbody2D rb;
+    private Animator myAnimator;
+    private SpriteRenderer mySpriteRenderer;
 
     private void Awake()
     {
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
+        myAnimator = GetComponent<Animator>();
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnEnable()
@@ -31,26 +37,32 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        PlayerMovement();
+        PlayerInput();
     }
 
     private void FixedUpdate()
     {
+        FlipPlayer();
         Move();
     }
 
-    private void PlayerMovement()
+    private void PlayerInput()
     {
-        // reads the value of the playercontrols movementr Move value that we setup in the Action Map
         movement = playerControls.Movement.Move.ReadValue<Vector2>();
-        Debug.Log(movement.x);
+        myAnimator.SetFloat("moveX", movement.x);
+        myAnimator.SetFloat("moveY", movement.y);
     }
 
     private void Move()
     {
         rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
-        
+
     }
 
-
+    void FlipPlayer()
+    {
+        Vector3 mousePos = Mouse.current.position.ReadValue();
+        Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        mySpriteRenderer.flipX = mousePos.x < playerScreenPoint.x;
+    }
 }
