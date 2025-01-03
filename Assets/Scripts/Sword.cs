@@ -53,6 +53,11 @@ public class Sword : MonoBehaviour
         slashAnim.transform.parent = this.transform.parent;
     }
 
+    public void SwingUpFlipAnim()
+    {
+        slashAnim.gameObject.transform.rotation = Quaternion.Euler(-180, 0, 0);
+    }
+
     private void MouseFollowWithOffset()
     {
         // sword follows cursor
