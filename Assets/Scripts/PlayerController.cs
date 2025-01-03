@@ -65,4 +65,5 @@ public class PlayerController : MonoBehaviour
         Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
         mySpriteRenderer.flipX = mousePos.x < playerScreenPoint.x;
     }
+
 }
