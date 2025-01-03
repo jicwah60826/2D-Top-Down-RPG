@@ -7,11 +7,15 @@ using UnityEngine.InputSystem;
 
 public class Sword : MonoBehaviour
 {
+    [SerializeField] private GameObject slashAnimPrefab;
+    [SerializeField] private Transform slashAnimSpawnPoint;
 
     private PlayerControls playerControls;
     private Animator myAnimator;
     private PlayerController playerController;
     private ActiveWeapon activeWeapon;
+
+    private GameObject slashAnim;
 
     private void Awake()
     {
@@ -44,6 +48,9 @@ public class Sword : MonoBehaviour
     {
         // fire sword animation via trigger
         myAnimator.SetTrigger("Attack");
+
+        slashAnim = Instantiate(slashAnimPrefab, slashAnimSpawnPoint.position, Quaternion.identity);
+        slashAnim.transform.parent = this.transform.parent;
     }
 
     private void MouseFollowWithOffset()
