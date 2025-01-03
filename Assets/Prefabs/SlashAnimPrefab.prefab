@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8190541521197077248}
   - component: {fileID: 352572828499579140}
   - component: {fileID: 4328749005548898520}
+  - component: {fileID: 1063810199713905026}
   m_Layer: 0
   m_Name: SlashAnimPrefab
   m_TagString: Untagged
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -614257295, guid: 5e31329654c40cf46b814a06a2eb88a3, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.13333334}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -106,3 +107,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1063810199713905026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9085844676040352452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b42f83cc6fe564a82ea420a6f63272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
