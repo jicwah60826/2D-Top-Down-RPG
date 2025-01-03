@@ -69,20 +69,36 @@ public class PlayerController : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
 
-        if(mousePos.x < playerScreenPoint.x)
-        {
-            mySpriteRenderer.flipX = true;
-            FacingLeft = true;
-        }
-        else
-        {
-            mySpriteRenderer.flipY = false;
-            FacingLeft = false;
-        }
+        //if(mousePos.x < playerScreenPoint.x)
+        //{
+        //    mySpriteRenderer.flipX = true;
+        //    FacingLeft = true;
+        //}
+        //else
+        //{
+        //    mySpriteRenderer.flipY = false;
+        //    FacingLeft = false;
+        //}
 
         //Vector3 mousePos = Mouse.current.position.ReadValue();
         //Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
         //mySpriteRenderer.flipX = mousePos.x < playerScreenPoint.x;
+
+
+        if (mousePos.x < playerScreenPoint.x)
+        {
+
+            gameObject.transform.localScale = new Vector3(-1, 1, 1);
+
+
+
+        }
+        else
+        {
+
+            gameObject.transform.localScale = new Vector3(1, 1, 1);
+
+        }
     }
 
 }

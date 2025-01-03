@@ -564,8 +564,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 591d30cc32b95854aba02c37e677e2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slashAnimationPrefab: {fileID: 6884387307854161836, guid: 35549cfd1833e53469d5ef4b5c1733f5, type: 3}
-  slashAnimationSpawnPoint: {fileID: 306614632}
 --- !u!4 &278113753 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8760377236306538355, guid: 130c13fa44d6d2d408f43aaefc58b26e, type: 3}

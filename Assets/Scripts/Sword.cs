@@ -7,9 +7,6 @@ using UnityEngine.InputSystem;
 
 public class Sword : MonoBehaviour
 {
-
-    [SerializeField] private GameObject slashAnimationPrefab;
-    [SerializeField] private GameObject slashAnimationSpawnPoint;
     private PlayerControls playerControls;
     private Animator myAnimator;
     private PlayerController playerController;
@@ -41,48 +38,12 @@ public class Sword : MonoBehaviour
 
     private void Update()
     {
-        MouseFollowWithOffset();
+     
     }
 
     private void Attack()
     {
         // fire sword animation via trigger
         myAnimator.SetTrigger("Attack");
-
-        
-        slashAnim =  Instantiate(slashAnimationPrefab, slashAnimationSpawnPoint.transform.position, Quaternion.identity);
-
-        // set the instantiated slashanim game object as a child of this items game object
-        slashAnim.transform.parent = this.transform.parent;
-    }
-
-    public void SwingUpFlipAnimEvent()
-    {
-        slashAnim.gameObject.transform.rotation = Quaternion.Euler(-180, 0, 0);
-        if (playerController.FacingLeft)
-        {
-            slashAnim.GetComponent<SpriteRenderer>().flipX = true;
-        }
-
-    }
-
-    private void MouseFollowWithOffset()
-    {
-        // sword follows cursor
-        Vector3 mousePos = Input.mousePosition;
-        Vector3 playerScreenpoint = Camera.main.WorldToScreenPoint(playerController.transform.position);
-
-        //float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
-
-        float angle = Mathf.Atan2(mousePos.y - playerController.transform.position.y, Mathf.Abs(mousePos.x - playerController.transform.position.x)) * Mathf.Rad2Deg;
-
-        if (mousePos.x < playerScreenpoint.x)
-        {
-            activeWeapon.transform.rotation = Quaternion.Euler(0, 180, angle);
-        }
-        else
-        {
-            activeWeapon.transform.rotation = Quaternion.Euler(0, 0, angle);
-        }
     }
 }
