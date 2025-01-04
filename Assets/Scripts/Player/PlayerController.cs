@@ -10,6 +10,8 @@ using UnityEngine.Scripting;
 public class PlayerController : MonoBehaviour
 {
 
+    public static PlayerController instance;
+
     //
     public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
 
@@ -26,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
+
         playerControls = new PlayerControls();
         rb = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
