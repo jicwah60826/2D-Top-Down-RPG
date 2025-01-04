@@ -9,6 +9,10 @@ using UnityEngine.Scripting;
 
 public class PlayerController : MonoBehaviour
 {
+
+    //
+    public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
+
     [SerializeField] private float moveSpeed = 1;
 
     private PlayerControls playerControls;
@@ -16,6 +20,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator myAnimator;
     private SpriteRenderer mySpriteRenderer;
+
+
+    private bool facingLeft = false;
 
     private void Awake()
     {
@@ -42,7 +49,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        FlipPlayer();
+        AdjustPlayerFacingDirection();
         Move();
     }
 
@@ -59,11 +66,25 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void FlipPlayer()
+    void AdjustPlayerFacingDirection()
     {
-        Vector3 mousePos = Mouse.current.position.ReadValue();
-        Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
-        mySpriteRenderer.flipX = mousePos.x < playerScreenPoint.x;
-    }
+        //Vector3 mousePos = Mouse.current.position.ReadValue();
+        //Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        //mySpriteRenderer.flipX = mousePos.x < playerScreenPoint.x;
 
+        Vector3 mousePos = Input.mousePosition;
+        Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
+
+        if (mousePos.x < playerScreenPoint.x)
+        {
+            mySpriteRenderer.flipX = true;
+            FacingLeft = true;
+        }
+        else
+        {
+            mySpriteRenderer.flipX = false;
+            FacingLeft = false;
+        }
+
+    }
 }
