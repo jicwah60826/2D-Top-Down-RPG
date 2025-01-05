@@ -1949,6 +1949,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime
       objectReference: {fileID: 0}
+    - target: {fileID: 2215030084879839251, guid: 965af1345d406fa4ba0f6665dab354f7, type: 3}
+      propertyPath: knockBackAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2302584726335177585, guid: 965af1345d406fa4ba0f6665dab354f7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.9321861
@@ -1988,6 +1992,10 @@ PrefabInstance:
     - target: {fileID: 2302584726335177585, guid: 965af1345d406fa4ba0f6665dab354f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4185473036336989929, guid: 965af1345d406fa4ba0f6665dab354f7, type: 3}
+      propertyPath: moveSpeed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

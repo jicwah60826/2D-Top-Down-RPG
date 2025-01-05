@@ -6,10 +6,11 @@ public class KnockBack : MonoBehaviour
 {
 
 
-    [SerializeField] private int knockBackAmount;
     [SerializeField] private float knockBackTime;
 
     private Rigidbody2D rb;
+
+
 
     // private set public get - can only be set here privately, but data will be available publicly.
     public bool gettingKnocked {  get; private set; }
@@ -20,6 +21,7 @@ public class KnockBack : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
 
     }
 
@@ -32,6 +34,7 @@ public class KnockBack : MonoBehaviour
 
         rb.AddForce(difference, ForceMode2D.Impulse);
         StartCoroutine(GettingKnockedCo());
+
     }
 
     private IEnumerator GettingKnockedCo()
