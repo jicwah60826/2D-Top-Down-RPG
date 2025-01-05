@@ -569,6 +569,7 @@ MonoBehaviour:
   slashAnimPrefab: {fileID: 9085844676040352452, guid: 35549cfd1833e53469d5ef4b5c1733f5, type: 3}
   slashAnimSpawnPoint: {fileID: 1536886596}
   weaponCollider: {fileID: 410898788}
+  attackCoolDownTime: 0.25
 --- !u!70 &173070117
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -810,13 +811,15 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 1.7926025, y: 1.3493053}
-      - {x: 0.99007845, y: 1.4637778}
+    - - {x: 1.9985261, y: -0.0726279}
+      - {x: 2.0239754, y: 0.92159677}
+      - {x: 1.4752951, y: 1.640171}
+      - {x: 0.72565603, y: 1.8604127}
       - {x: 0.4612291, y: 1.3953397}
       - {x: 0.7674246, y: 0.43418252}
-      - {x: 0.3672374, y: -0.66248256}
-      - {x: 0.9027344, y: -0.58946943}
-      - {x: 1.8595247, y: -0.63888407}
+      - {x: 0.20858318, y: -1.08556}
+      - {x: 0.9027344, y: -1.0654314}
+      - {x: 1.5951014, y: -0.7182111}
   m_UseDelaunayMesh: 0
 --- !u!114 &410898790
 MonoBehaviour:
