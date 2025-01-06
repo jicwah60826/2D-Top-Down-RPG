@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1b368e10c13df438e35ab495a88a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roacmChangeDirTime: 2
 --- !u!114 &4185473036336989929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46b637bdba8960042a86ad09afa42fae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 2
 --- !u!114 &3747008412939528251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
+  knockBackAmount: 5
   deathVfxPrefab: {fileID: 4531264489844732067, guid: 98978feeefd34c444a207964ca6affa3, type: 3}
 --- !u!114 &2215030084879839251
 MonoBehaviour:
@@ -205,7 +207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd0fc78ca2ca304f97a8c6af5a9b086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockBackAmount: 2
   knockBackTime: 0.2
 --- !u!114 &514907591388923789
 MonoBehaviour:

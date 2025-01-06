@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
 
     //
-    public bool FacingLeft { get { return facingLeft; } set { facingLeft = value; } }
+    public bool FacingLeft { get { return facingLeft; }}
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private float dashSpeed;
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator myAnimator;
     private SpriteRenderer mySpriteRenderer;
-    private float originalMoveSpeed;
+    private float startingMoveSpeed;
     private bool isDashing = false;
 
 
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
 
-        originalMoveSpeed = moveSpeed;
+        startingMoveSpeed = moveSpeed;
     }
 
     private void OnEnable()
@@ -94,12 +94,12 @@ public class PlayerController : MonoBehaviour
         if (mousePos.x < playerScreenPoint.x)
         {
             mySpriteRenderer.flipX = true;
-            FacingLeft = true;
+            facingLeft = true;
         }
         else
         {
             mySpriteRenderer.flipX = false;
-            FacingLeft = false;
+            facingLeft = false;
         }
 
     }
@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
     private IEnumerator EndDashRoutine()
     {
         yield return new WaitForSeconds(dashTime);
-        moveSpeed = originalMoveSpeed;
+        moveSpeed = startingMoveSpeed;
         myTrailRenderer.emitting = false;
         yield return new WaitForSeconds(dashCoolDownTime);
         isDashing = false;

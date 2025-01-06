@@ -13,7 +13,7 @@ public class KnockBack : MonoBehaviour
 
 
     // private set public get - can only be set here privately, but data will be available publicly.
-    public bool gettingKnocked {  get; private set; }
+    public bool GettingKnockedBack {  get; private set; }
 
 
 
@@ -27,7 +27,7 @@ public class KnockBack : MonoBehaviour
 
     public void GetKnockedBack(Transform damageSource, float knockBackThrust)
     {
-        gettingKnocked = true;
+        GettingKnockedBack = true;
         // applies force to the item being knocked back and takes into account that items rigidbody mass amount
 
         Vector2 difference = (transform.position - damageSource.position).normalized * knockBackThrust * rb.mass;
@@ -41,7 +41,7 @@ public class KnockBack : MonoBehaviour
     {
         yield return new WaitForSeconds(knockBackTime);
         rb.velocity = Vector2.zero;
-        gettingKnocked = false;
+        GettingKnockedBack = false;
     }
 
 
